@@ -1,7 +1,7 @@
 # Multi-container apps exercise
 
 ## Set-up and run
-- Fork this repo and clone it
+- Fork this repo (make sure to **untick** `Copy the main branch only`) and clone it
 - Switch to this `exercise` branch
 - Check the code works:
   - Run `docker compose up -d`
