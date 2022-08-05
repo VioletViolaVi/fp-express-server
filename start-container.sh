@@ -4,6 +4,6 @@ docker run -it \
 -p 3000:3000 \
 --name express-api \
 -w /code \
---mount type="bind",source=/$(pwd),target=//code \
+--mount type="bind",source="/$(pwd)",target=//code \
 node:slim \
 bash -c "npm install && npm run dev"
