@@ -1,6 +1,11 @@
 version: '3'
 name: express-compose
 services:
+  client:
+    container_name: simple_client
+    image: mklilley/fp-simple-client
+    ports:
+      - 2022:80
   api:
     container_name: express-compose-api
     image: node:slim
@@ -8,11 +13,14 @@ services:
       - type: bind
         source: ./
         target: /code
+      - type: volume
+        source: visits
+        target: /data
     working_dir: /code
-    ports: 
+    ports:
       - 3000:3000
     environment:
       - PORT=3000
     command: bash -c "npm install && npm run dev"
-    
-  
+volumes:
+  visits:
